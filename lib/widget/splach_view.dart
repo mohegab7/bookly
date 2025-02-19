@@ -47,6 +47,7 @@ class _splash_viewState extends State<splash_view>
               textAlign: TextAlign.center,
             ),
           ),
+          Text('hi mohmaed'),
         ],
       ),
     );
