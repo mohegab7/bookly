@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hellllllo/constants/constants.dart';
+import 'package:hellllllo/widget/details_book.dart';
 import 'package:hellllllo/widget/home_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -74,72 +75,78 @@ class BestSeller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 3 / 4,
-            child: Container(
-              // height: MediaQuery.of(context).size.height * .25,
-              // width: MediaQuery.of(context).size.width * .25,
-              decoration: BoxDecoration(
-                color: const Color.fromRGBO(255, 255, 255, 1),
-                borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(AssetData.test),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BookDetailsViewBody()));
+      },
+      child: SizedBox(
+        height: 120,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 3 / 4,
+              child: Container(
+                // height: MediaQuery.of(context).size.height * .25,
+                // width: MediaQuery.of(context).size.width * .25,
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(255, 255, 255, 1),
+                  borderRadius: BorderRadius.circular(10),
+                  image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(AssetData.test),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * .5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'harry potter and  the  Golblet of fire ',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  // textAlign: TextAlign.start,
-                  style: StyleText.style20.copyWith(
-                    fontFamily: kGtSectrafine,
-                  ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                const Text(
-                  'j.k Rowing',
-                  textAlign: TextAlign.start,
-                  style: StyleText.style14,
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Expanded(
-                  child: Row(
-                    children: [
-                      Text(
-                        "19.99 €",
-                        style: StyleText.style14.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const BookRating()
-                    ],
-                  ),
-                )
-              ],
+            const SizedBox(
+              width: 20,
             ),
-          ),
-        ],
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .5,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'harry potter and  the  Golblet of fire ',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    // textAlign: TextAlign.start,
+                    style: StyleText.style20.copyWith(
+                      fontFamily: kGtSectrafine,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    'j.k Rowing',
+                    textAlign: TextAlign.start,
+                    style: StyleText.style14,
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Text(
+                          "19.99 €",
+                          style: StyleText.style14.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Spacer(),
+                        const BookRating()
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
