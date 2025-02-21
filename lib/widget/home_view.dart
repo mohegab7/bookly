@@ -29,8 +29,8 @@ class HomeView extends StatelessWidget {
   }
 }
 
-class CustomListView extends StatelessWidget {
-  const CustomListView({super.key});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class ListPhoto extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .25,
       child: ListView.builder(
-        itemBuilder: (index, context) => const CustomListView(),
+        itemBuilder: (index, context) => const CustomBookImage(),
         scrollDirection: Axis.horizontal,
       ),
     );
@@ -77,8 +77,10 @@ class BestSeller extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const BookDetailsViewBody()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const BookDetailsViewBody()));
       },
       child: SizedBox(
         height: 120,

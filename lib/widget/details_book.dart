@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:hellllllo/widget/home_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: CustomBookAppBarDetails()),
+    var heigh = MediaQuery.of(context).size.height;
+    var widh = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: heigh * .02),
+        child: Column(
+          children: [
+            // SafeArea(
+            const CustomBookAppBarDetails(),
+            // ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: widh * .26),
+              child: const CustomBookImage(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -22,7 +38,9 @@ class CustomBookAppBarDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.close),
             color: Colors.white,
           ),
