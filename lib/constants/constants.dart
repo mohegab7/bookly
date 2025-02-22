@@ -13,13 +13,20 @@ abstract class StyleText {
   );
   static const style30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.normal,
     color: Colors.white,
+    fontFamily: kGtSectrafine,
   );
   static const style16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
     color: Colors.white,
+  );
+  static const style18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+    fontStyle: FontStyle.italic,
   );
   static const style14 = TextStyle(
     fontSize: 14,

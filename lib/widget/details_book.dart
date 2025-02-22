@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/widget/home_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -19,6 +20,20 @@ class BookDetailsViewBody extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: widh * .26),
               child: const CustomBookImage(),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              'The Jungle Book',
+              style: StyleText.style30,
+            ),
+            const Opacity(
+              opacity: .7,
+              child: Text(
+                'Rudyard Kipling',
+                style: StyleText.style18,
+              ),
             ),
           ],
         ),
