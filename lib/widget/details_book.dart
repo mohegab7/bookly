@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hellllllo/constants/constants.dart';
+import 'package:hellllllo/widget/home_body.dart';
 import 'package:hellllllo/widget/home_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -35,6 +36,12 @@ class BookDetailsViewBody extends StatelessWidget {
                 style: StyleText.style18,
               ),
             ),
+            // const SizedBox(
+            //   height: 5,
+            // ),
+            const BookRating(
+              mainAxisAlignment: MainAxisAlignment.center,
+            )
           ],
         ),
       ),

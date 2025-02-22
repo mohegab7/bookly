@@ -43,26 +43,30 @@ class CustomAppBar extends StatelessWidget {
 }
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
-
+  const BookRating({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         IconButton(
           onPressed: () {},
           icon: const Icon(
             FontAwesomeIcons.solidStar,
             color: Color(0xffFFDD4f),
-            size: 20,
+            size: 14,
           ),
         ),
-        // const SizedBox(
-        // width: 2,
-        // ),
         const Text('4.5', style: StyleText.style16),
-        const SizedBox(width: 5),
-        Text('(230)', style: StyleText.style14.copyWith(color: Colors.grey)),
+        const SizedBox(width: 8),
+        Opacity(
+            opacity: .5,
+            child: Text('(230)',
+                style: StyleText.style14.copyWith(color: Colors.white))),
       ],
     );
   }
