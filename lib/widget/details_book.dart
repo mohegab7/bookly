@@ -10,42 +10,120 @@ class BookDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var heigh = MediaQuery.of(context).size.height;
     var widh = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: heigh * .02),
-        child: Column(
-          children: [
-            // SafeArea(
-            const CustomBookAppBarDetails(),
-            // ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: widh * .26),
-              child: const CustomBookImage(),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'The Jungle Book',
-              style: StyleText.style30,
-            ),
-            const Opacity(
-              opacity: .7,
-              child: Text(
-                'Rudyard Kipling',
-                style: StyleText.style18,
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          child: Scaffold(
+            body: Padding(
+              padding: EdgeInsets.symmetric(vertical: heigh * .02),
+              child: Column(
+                children: [
+                  // SafeArea(
+                  const CustomBookAppBarDetails(),
+                  // ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: widh * .26),
+                    child: const CustomBookImage(),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    'The Jungle Book',
+                    style: StyleText.style30,
+                  ),
+                  const Opacity(
+                    opacity: .7,
+                    child: Text(
+                      'Rudyard Kipling',
+                      style: StyleText.style18,
+                    ),
+                  ),
+                  // const SizedBox(
+                  //   height: 5,
+                  // ),
+                  const BookRating(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+            
+                  const BookAction(),
+                  Expanded(
+                    child: const SizedBox(
+                      height: 50,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(-0.9, 2),
+                    // alignment: Alignment.centerLeft,
+                    child: Text(
+                      'You can also like',
+                      style:
+                          StyleText.style14.copyWith(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    child: similarBookListView(),
+                  ),
+                ],
               ),
             ),
-            // const SizedBox(
-            //   height: 5,
-            // ),
-            const BookRating(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-
-            const BookAction(),
-          ],
+          ),
         ),
+      ],
+    );
+    // ignore: dead_code
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: heigh * .02),
+      child: Column(
+        children: [
+          // SafeArea(
+          const CustomBookAppBarDetails(),
+          // ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: widh * .26),
+            child: const CustomBookImage(),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const Text(
+            'The Jungle Book',
+            style: StyleText.style30,
+          ),
+          const Opacity(
+            opacity: .7,
+            child: Text(
+              'Rudyard Kipling',
+              style: StyleText.style18,
+            ),
+          ),
+          // const SizedBox(
+          //   height: 5,
+          // ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+
+          const BookAction(),
+          Expanded(
+            child: const SizedBox(
+              height: 50,
+            ),
+          ),
+          Align(
+            alignment: Alignment(-0.9, 2),
+            // alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: StyleText.style14.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: similarBookListView(),
+          ),
+        ],
       ),
     );
   }
@@ -148,6 +226,21 @@ class CustomButton extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class similarBookListView extends StatelessWidget {
+  const similarBookListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .15,
+      child: ListView.builder(
+        itemBuilder: (index, context) => const CustomBookImage(),
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 }
