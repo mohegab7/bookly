@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hellllllo/widget/splach_view.dart';
 
 void main() {
-  runApp(const splahview());
+  runApp(const Splahview());
 }
 
 // ignore: camel_case_types
-class splahview extends StatelessWidget {
-  const splahview({super.key});
+class Splahview extends StatelessWidget {
+  const Splahview({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const splash_view(),
+      home:  const splash_view(),
       // routerConfig: _router,
       theme: ThemeData().copyWith(
           scaffoldBackgroundColor: const Color(0xff100b20),
