@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hellllllo/widget/splach_view.dart';
+import 'package:hellllllo/features/splach_view/presention/views/splach_view.dart';
+
 
 void main() {
   runApp(const Splahview());

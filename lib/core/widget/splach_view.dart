@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hellllllo/constants/constants.dart';
-import 'package:hellllllo/widget/home_view.dart';
+import 'package:hellllllo/core/widget/home_view.dart';
 
 class splash_view extends StatefulWidget {
   const splash_view({super.key});

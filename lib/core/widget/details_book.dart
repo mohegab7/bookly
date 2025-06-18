@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hellllllo/constants/constants.dart';
-import 'package:hellllllo/widget/home_body.dart';
-import 'package:hellllllo/widget/home_view.dart';
+import 'package:hellllllo/core/widget/home_body.dart';
+import 'package:hellllllo/core/widget/home_view.dart';
+
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});

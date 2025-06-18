@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hellllllo/constants/constants.dart';
-import 'package:hellllllo/widget/details_book.dart';
-import 'package:hellllllo/widget/home_body.dart';
+import 'package:hellllllo/core/widget/details_book.dart';
+import 'package:hellllllo/core/widget/home_body.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

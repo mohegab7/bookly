@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hellllllo/constants/constants.dart';
+import 'package:hellllllo/core/widget/home_view.dart';
 import 'package:hellllllo/features/splach_view/presention/views/widgets/sliding_text.dart';
-import 'package:hellllllo/widget/home_view.dart';
 
 
 class splash_view_body extends StatefulWidget {

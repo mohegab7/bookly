@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hellllllo/widget/home_view.dart';
+import 'package:hellllllo/core/widget/home_view.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hellllllo/Features/search/presentation/views/search_view.dart';
 import 'package:hellllllo/core/utils/styles.dart';
-import 'package:hellllllo/widget/home_view.dart';
+import 'package:hellllllo/core/widget/home_view.dart';
+
 
 
 class SearchViewBody extends StatelessWidget {

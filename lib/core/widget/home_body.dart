@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hellllllo/Features/search/presentation/views/search_view.dart';
 import 'package:hellllllo/constants/constants.dart';
-import 'package:hellllllo/widget/search_view.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
