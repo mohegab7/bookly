@@ -3,8 +3,6 @@ import 'package:hellllllo/Features/search/presentation/views/search_view.dart';
 import 'package:hellllllo/core/utils/styles.dart';
 import 'package:hellllllo/core/widget/home_view.dart';
 
-
-
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
 

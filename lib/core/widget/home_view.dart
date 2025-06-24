@@ -3,7 +3,6 @@ import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/core/widget/details_book.dart';
 import 'package:hellllllo/core/widget/home_body.dart';
 
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 

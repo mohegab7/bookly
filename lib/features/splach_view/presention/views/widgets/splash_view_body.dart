@@ -4,7 +4,6 @@ import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/core/widget/home_view.dart';
 import 'package:hellllllo/features/splach_view/presention/views/widgets/sliding_text.dart';
 
-
 class splash_view_body extends StatefulWidget {
   const splash_view_body({super.key});
 

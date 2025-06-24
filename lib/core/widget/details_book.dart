@@ -3,7 +3,6 @@ import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/core/widget/home_body.dart';
 import 'package:hellllllo/core/widget/home_view.dart';
 
-
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
@@ -46,7 +45,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   const BookRating(
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
-            
+
                   const BookAction(),
                   Expanded(
                     child: const SizedBox(
@@ -58,8 +57,8 @@ class BookDetailsViewBody extends StatelessWidget {
                     // alignment: Alignment.centerLeft,
                     child: Text(
                       'You can also like',
-                      style:
-                          StyleText.style14.copyWith(fontWeight: FontWeight.w700),
+                      style: StyleText.style14
+                          .copyWith(fontWeight: FontWeight.w700),
                     ),
                   ),
                   const Padding(
