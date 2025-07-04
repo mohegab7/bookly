@@ -5,9 +5,11 @@ import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/features/home/domain/entities/book_entity.dart';
 import 'package:hellllllo/features/splach_view/presention/views/splach_view.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   runApp(const Splahview());
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox(KFeaturedBox);
 }
