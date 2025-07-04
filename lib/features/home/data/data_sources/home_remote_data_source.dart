@@ -1,4 +1,6 @@
+import 'package:hellllllo/constants/constants.dart';
 import 'package:hellllllo/core/utils/api_service.dart';
+import 'package:hellllllo/core/utils/function/save_books.dart';
 import 'package:hellllllo/features/home/data/models/bookmodel/bookmodel/item.dart';
 import 'package:hellllllo/features/home/domain/entities/book_entity.dart';
 
@@ -16,18 +18,20 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     var data = await api_service.get(
         endpoint: 'volumes?Filtring=free-books&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBooksdata(books, KFeaturedBox);
     return books;
   }
 
   
 
   @override
-  Future<List<BookEntity>> fetchNewestBooks()async{
+  Future<List<BookEntity>> fetchNewestBooks() async {
     var data = await api_service.get(
         endpoint: 'volumes?Filtring=free-books&Sorting=newest&q=programming');
     List<BookEntity> books = getBooksList(data);
     return books;
   }
+
   List<BookEntity> getBooksList(Map<String, dynamic> data) {
     List<BookEntity> books = [];
     for (var bookmap in data['items']) {
