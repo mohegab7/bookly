@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hellllllo/constants/constants.dart';
+import 'package:hellllllo/features/home/domain/entities/book_entity.dart';
 import 'package:hellllllo/features/splach_view/presention/views/splach_view.dart';
+import 'package:hive/hive.dart';
 
-void main() {
+void main() async {
   runApp(const Splahview());
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(KFeaturedBox);
 }
 
 // ignore: camel_case_types

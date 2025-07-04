@@ -38,3 +38,4 @@ abstract class StyleText {
 
 const kduration = Duration(milliseconds: 500);
 const kGtSectrafine = 'GT Sectra Fine';
+const KFeaturedBox = 'kfeatured_box';
