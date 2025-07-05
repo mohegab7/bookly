@@ -9,9 +9,11 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   runApp(const Splahview());
+
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox(KFeaturedBox);
+  await Hive.openBox(KNewestBox);
 }
 
 // ignore: camel_case_types

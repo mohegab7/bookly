@@ -22,13 +22,12 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     return books;
   }
 
-  
-
   @override
   Future<List<BookEntity>> fetchNewestBooks() async {
     var data = await api_service.get(
         endpoint: 'volumes?Filtring=free-books&Sorting=newest&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBooksdata(books, KNewestBox);
     return books;
   }
 

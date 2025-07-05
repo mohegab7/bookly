@@ -11,12 +11,12 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   @override
   List<BookEntity> fetchFutureBooks() {
     var box = Hive.box<BookEntity>(KFeaturedBox);
-   return box.values.toList();
+    return box.values.toList();
   }
 
   @override
   List<BookEntity> fetchNewestBooks() {
-    // TODO: implement fetchNewestBooks
-    throw UnimplementedError();
+    var box = Hive.box<BookEntity>(KNewestBox);
+    return box.values.toList();
   }
 }
