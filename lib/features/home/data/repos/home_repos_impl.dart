@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:hellllllo/core/errors/failure.dart';
+import 'package:hellllllo/core/errors/Failure.dart';
 import 'package:hellllllo/features/home/data/data_sources/home_local_data_source.dart';
 import 'package:hellllllo/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:hellllllo/features/home/domain/entities/book_entity.dart';
@@ -12,21 +12,22 @@ class HomeReposImpl extends HomeRepo {
   HomeReposImpl(
       {required this.homeLocalDataSource, required this.homeRemoteDataSource});
   @override
-  Future<Either<failure, List<BookEntity>>> fetchFutureBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchFutureBooks() async {
     try {
-      var bookslist = homeLocalDataSource.fetchFutureBooks();
+      List<BookEntity> bookslist;
+      bookslist = homeLocalDataSource.fetchFutureBooks();
       if (bookslist.isNotEmpty) {
         return right(bookslist);
       }
-      var books = await homeRemoteDataSource.fetchFutureBooks();
-      return right(books);
+      bookslist = await homeRemoteDataSource.fetchFutureBooks();
+      return right(bookslist);
     } catch (e) {
-      return left(failure());
+      return left(ServerFailure());
     }
   }
 
   @override
-  Future<Either<failure, List<BookEntity>>> fetchNewestBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
     try {
       List<BookEntity> books;
       books = homeLocalDataSource.fetchNewestBooks();
@@ -36,7 +37,7 @@ class HomeReposImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
     } catch (e) {
-      return left(failure());
+      return left(ServerFailure());
     }
   }
 }
