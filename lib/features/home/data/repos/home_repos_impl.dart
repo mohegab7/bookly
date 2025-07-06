@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:hellllllo/core/errors/Failure.dart';
 import 'package:hellllllo/features/home/data/data_sources/home_local_data_source.dart';
 import 'package:hellllllo/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:hellllllo/features/home/domain/entities/book_entity.dart';
 import 'package:hellllllo/features/home/domain/repos/home_repo.dart';
+
 
 class HomeReposImpl extends HomeRepo {
   final HomeLocalDataSource homeLocalDataSource;
@@ -22,7 +24,12 @@ class HomeReposImpl extends HomeRepo {
       bookslist = await homeRemoteDataSource.fetchFutureBooks();
       return right(bookslist);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -37,7 +44,12 @@ class HomeReposImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 }
